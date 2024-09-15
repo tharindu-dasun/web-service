@@ -21,7 +21,7 @@ jobs:
 
     - name: Build and push Docker images
       run: |
-        services=("api-gateway" "account-service" "centralized-logging" "kubernetes" "notification-service" "trading-service" "wallet-service" )
+        services=("api-gateway" "account-service" "centralized-logging" "notification-service" "trading-service" "wallet-service" )
         for service in "${services[@]}"; do
           docker build -t tharindu44/$service:latest ./$service
           docker push tharindu44/$service:latest
@@ -51,7 +51,7 @@ jobs:
 
     - name: Run unit tests
       run: |
-        services=("api-gateway" "account-service" "centralized-logging" "kubernetes" "notification-service" "trading-service" "wallet-service" )
+        services=("api-gateway" "account-service" "centralized-logging" "notification-service" "trading-service" "wallet-service" )
         for service in "${services[@]}"; do
           cd $service
           pip install -r requirements.txt
@@ -65,7 +65,7 @@ jobs:
 
     - name: Run migrations
       run: |
-        services=("api-gateway" "account-service" "centralized-logging" "kubernetes" "notification-service" "trading-service" "wallet-service" )
+        services=("api-gateway" "account-service" "centralized-logging" "notification-service" "trading-service" "wallet-service" )
         for service in "${services[@]}"; do
           cd $service
           if [ -f "migrations" ]; then
